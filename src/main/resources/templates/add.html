@@ -17,7 +17,7 @@
 
                 <div class="form-group">
                     <label>Deed Address:
-                        <input class="form-control" type="text" th:field="${deed.address}" th:value="${deed.address}">
+                        <input class="form-control" type="text" id="addressInput" th:field="${deed.address}" th:value="${deed.address}">
                     </label>
                 </div>
 
@@ -51,5 +51,8 @@
             </form>
         </div>
     </div>
+
+    <script async th:src="'https://maps.googleapis.com/maps/api/js?key=' + ${placesApiKey} + '&libraries=places&callback=auto'"></script>
+
 </body>
 </html>

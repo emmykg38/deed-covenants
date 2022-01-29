@@ -3,6 +3,7 @@ package com.techtogether.deedcovenants.controllers;
 import com.techtogether.deedcovenants.data.DeedRepository;
 import com.techtogether.deedcovenants.models.Deed;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,10 +15,13 @@ public class AddDeedController {
     @Autowired
     DeedRepository deedRepository;
 
+    @Value("${placesApiKey}")
+    private String placesApiKey;
 
     @GetMapping("/add")
     public String renderAddDeedPage(Model model) {
         model.addAttribute(new Deed());
+        model.addAttribute("placesApiKey", placesApiKey);
         return "add";
     }
 }
