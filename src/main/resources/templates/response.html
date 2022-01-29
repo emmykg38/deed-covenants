@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body>
+  <nav th:replace="fragments :: navbar"></nav>
+  <header th:replace="fragments :: header"></header>
+
+  <div class="container">
+    <h1 class="my-4">Legal Resources</h1>
+
+    <div class="row">
+      <div class="col-lg-4 col-sm-6 mb-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h4 class="card-title">
+              <a href="https://www.findlaw.com/legalblogs/law-and-life/how-to-remove-a-racially-restrictive-housing-covenant/">Begin Legal Action</a>
+            </h4>
+            <p class="card-text">This article provides a starting framework to understand how to remove a racial covenant.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-6 mb-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h4 class="card-title">
+              <a href="https://lawyers.findlaw.com/lawyer/practice/discrimination?scrlybrkr=c65d2749/">Find a Housing Discrimination Lawyer</a>
+            </h4>
+            <p class="card-text">Search for a discrimination lawyer in your area who could assist you in removing the covenant from your deed.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-6 mb-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h4 class="card-title">
+              <a href="https://www.notarize.com/">Connect with a Notary</a>
+            </h4>
+            <p class="card-text">Notarize, an online notary service, will assist you in removing racial covenants, free of charge.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <h1 class="my-4">Additional Information About Racial Covenants</h1>
+
+    <div class="row">
+      <div class="col-lg-4 col-sm-6 mb-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h4 class="card-title">
+              <a href="https://mappingprejudice.umn.edu/what-are-covenants/">Mapping Prejudice Project</a>
+            </h4>
+            <p class="card-text">The Mapping Prejudice Project, based at the University of Minnesota, endeavors to bring awareness to the reality of racial covenants and to map their existence in the US.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-6 mb-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h4 class="card-title">
+              <a href="https://www.epi.org/publication/the-color-of-law-a-forgotten-history-of-how-our-government-segregated-america/">The Color of Law</a>
+            </h4>
+            <p class="card-text">The Color of Law by Richard Rothstein details how racial segregation was promoted by local municipalities up to the federal government.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-6 mb-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h4 class="card-title">
+              <a href="https://www.splcenter.org/">Southern Poverty Law Center</a>
+            </h4>
+            <p class="card-text">The Southern Poverty Law Center works for systemic reforms on behalf of victims of bigotry and discrimination.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <span th:replace="fragments :: requiredBootstrapCode"></span>
+  <footer th:replace="fragments :: footer"></footer>
+</body>
+</html>

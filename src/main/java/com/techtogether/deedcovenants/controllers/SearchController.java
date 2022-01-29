@@ -22,4 +22,9 @@ public class SearchController {
     public String processSearchForm(Model model) {
         return "redirect:";
     }
+
+    @GetMapping("/response")
+    public String renderResponse() {
+        return "response";
+    }
 }
