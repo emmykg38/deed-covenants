@@ -30,6 +30,7 @@ public class SearchController {
         Boolean hasCovenant;
         Iterable<Deed> listDeeds = deedRepository.findAll();
 //        do something with Iterable and Optional???
+//        use as reference?  https://www.codejava.net/frameworks/spring-boot/connect-to-mysql-database-examples
         if (listDeeds.equals(searchTerm)) {
             hasCovenant = true;
         }
