@@ -6,7 +6,9 @@ import java.sql.Date; //note: this used sql.Date, not java.util.Date -- I don't 
 
 @Data
 @Entity
-public class DeedEntry extends AbstractEntity {
+public class Deed extends AbstractEntity {
+
+    private String name; //eventually set up a name model to allow admin to login + set up one to many relationship
 
     private String address;
 
