@@ -9,14 +9,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/add")
 public class AddDeedController {
 
     @Autowired
     DeedRepository deedRepository;
 
 
-    @GetMapping
+    @GetMapping("/add")
     public String renderAddDeedPage(Model model) {
         model.addAttribute(new Deed());
         return "add";
