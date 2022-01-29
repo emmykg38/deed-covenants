@@ -20,7 +20,7 @@ public class SearchController {
 
     @PostMapping("/search")
     public String processSearchForm(Model model) {
-        return "redirect";
+        return "redirect:";
     }
 
     @GetMapping("/response")
