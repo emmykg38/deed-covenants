@@ -1,41 +1,58 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
-<head>
-    <meta charset="UTF-8"/>
-    <title></title>
-</head>
+<head th:replace="fragments :: head"></head>
 <body>
 
-    <div class="form-group">
-        <form method="post">
-            <label>Please enter your admin username:
-                <input class="input" type="text" th:field="${deed.name}" th:value="${deed.name}">
-            </label>
+    <nav th:replace="fragments :: navbar"></nav>
+<!--    <header th:replace="fragments :: header"></header>-->
 
-            <label>Deed Address:
-                <input class="input" type="text" th:field="${deed.address}" th:value="${deed.address}">
-            </label>
+    <div class="container">
+        <div class="form-group">
+            <form method="post">
+                <div class="form-group">
+                    <label>Please enter your admin username:
+                        <input class="form-control" type="text" th:field="${deed.name}" th:value="${deed.name}">
+                    </label>
+                </div>
 
-            <label>Restriction:
-<!--                in order to make a drop down, do we need to create a enum?-->
-                <input class="input" type="text" th:field="${deed.restriction}" th:value="${deed.restriction}">
-            </label>
+                <div class="form-group">
+                    <label>Deed Address:
+                        <input class="form-control" type="text" id="addressInput" th:field="${deed.address}" th:value="${deed.address}">
+                    </label>
+                </div>
 
-            <label>Date of Deed:
-                <input class="input" type="date" th:field="${deed.dateOfDeed}" th:value="${deed.dateOfDeed}">
-            </label>
+                <div class="form-group">
+                    <label>Restriction:
+        <!--                in order to make a drop down, do we need to create a enum?-->
+                        <input class="form-control" type="text" th:field="${deed.restriction}" th:value="${deed.restriction}">
+                    </label>
+                </div>
 
-            <label>Today's Date:
-                <input class="input" type="date" th:field="${deed.dateToday}" th:value="${deed.dateToday}">
-            </label>
+                <div class="form-group">
+                    <label>Date of Deed:
+                        <input class="form-control" type="date" th:field="${deed.dateOfDeed}" th:value="${deed.dateOfDeed}">
+                    </label>
+                </div>
 
-            <label>Upload Document:
-                <input class="input" type="file" th:field="${deed.file}" th:value="${deed.file}">
-            </label>
+                <div class="form-group">
+                    <label>Today's Date:
+                        <input class="form-control" type="date" th:field="${deed.dateToday}" th:value="${deed.dateToday}">
+                    </label>
+                </div>
 
-            <input type="submit" value="Submit">
+                <div class="form-group">
+                    <label>Upload Document:
+                        <input type="file" th:field="${deed.file}" th:value="${deed.file}">
+                    </label>
+                </div>
 
-        </form>
+                <input type="submit" value="Submit" class="btn btn-default">
+
+            </form>
+        </div>
     </div>
+
+    <script async th:src="'https://maps.googleapis.com/maps/api/js?key=' + ${placesApiKey} + '&libraries=places&callback=auto'"></script>
+
 </body>
 </html>
