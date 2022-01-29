@@ -16,8 +16,10 @@ function auto() {
         }
 
         new google.maps.places.Autocomplete(document.getElementById("addressInput"), autocompleteRequest);
+        new google.maps.places.Autocomplete(document.getElementById("searchInput"), autocompleteRequest);
 
         stopEnterFromSubmittingForm(document.getElementById("addressInput"));
+        stopEnterFromSubmittingForm(document.getElementById("searchInput"));
     }
 
     getAutocompleteData();

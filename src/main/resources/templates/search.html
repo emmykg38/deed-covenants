@@ -17,13 +17,15 @@
     <div class="deed-form">
         <form method="post">
             <label>Enter an address:
-                <input class="input" type="text">
+                <input class="input" id="searchInput" type="text">
             </label>
             <input type="submit" value="Submit">
         </form>
     </div>
 
+    <script async th:src="'https://maps.googleapis.com/maps/api/js?key=' + ${placesApiKey} + '&libraries=places&callback=auto'"></script>
     <span th:replace="fragments :: requiredBootstrapCode"></span>
     <footer th:replace="fragments :: footer"></footer>
+
 </body>
 </html>
