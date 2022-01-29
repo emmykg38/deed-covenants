@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body>
+  <nav th:replace="fragments :: navbar"></nav>
+  <header th:replace="fragments :: header"></header>
+
+  <section class="py-5">
+    <div class="container my-5">
+      <div class="row justify-content-center">
+        <div class="col-lg-6">
+
+          <h2>Resources to Remove Covenants</h2>
+          <a href="https://www.findlaw.com/legalblogs/law-and-life/how-to-remove-a-racially-restrictive-housing-covenant/">Starting How-To Guide</a>
+          <p class="lead">Racially-restrictive deeds were common-place for every type of real-estate transactions, and they prevented individuals of specified races from buying certain properties and living in certain communities. Many restrictions stated that the "premises shall not at any time be conveyed, mortgaged, or leased to any person or persons of Chinese, Japanese, Moorish, Turkish, Negro, Mongolian, or African blood or descent" and were most commonly used to prevent African-Americans owning property. This segregationist tactic limited education options and significantly hampered generational wealth acquisition. Racially-restrictive deed covenants were a critical tool used to promote segregation across the United States in the twentieth century and, unfortunately, they are still on many real estate deeds today.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <span th:replace="fragments :: requiredBootstrapCode"></span>
+  <footer th:replace="fragments :: footer"></footer>
+</body>
+</html>
