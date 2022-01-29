@@ -6,7 +6,7 @@
 </head>
 <body>
 
-    <div class="deed-form">
+    <div class="form-group">
         <form method="post">
             <label>Please enter your admin username:
                 <input class="input" type="text" th:field="${deed.name}" th:value="${deed.name}">
@@ -30,7 +30,7 @@
             </label>
 
             <label>Upload Document:
-                <input class="input" type="file">
+                <input class="input" type="file" th:field="${deed.file}" th:value="${deed.file}">
             </label>
 
             <input type="submit" value="Submit">

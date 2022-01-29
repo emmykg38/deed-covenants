@@ -1,13 +1,12 @@
 package com.techtogether.deedcovenants.models;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
 
 import javax.persistence.Entity;
+import java.io.File;
 import java.sql.Date; //note: this used sql.Date, not java.util.Date -- I don't know which would work. May need to change to java.util
 
 
-@Data
+
 @Entity
 public class Deed extends AbstractEntity {
 
@@ -21,16 +20,18 @@ public class Deed extends AbstractEntity {
 
     private Date dateToday;
 
+    private File file;
     // will need a document here, but I imagine a class will need to be created for it
 
     public Deed() {}
 
-    public Deed(String name, String address, String restriction, Date dateOfDeed, Date dateToday) {
+    public Deed(String name, String address, String restriction, Date dateOfDeed, Date dateToday, File file) {
         this.name = name;
         this.address = address;
         this.restriction = restriction;
         this.dateOfDeed = dateOfDeed;
         this.dateToday = dateToday;
+        this.file = file;
     }
 
     public String getName() {
@@ -71,5 +72,13 @@ public class Deed extends AbstractEntity {
 
     public void setDateToday(Date dateToday) {
         this.dateToday = dateToday;
+    }
+
+    public File getFile() {
+        return file;
+    }
+
+    public void setFile(File file) {
+        this.file = file;
     }
 }
