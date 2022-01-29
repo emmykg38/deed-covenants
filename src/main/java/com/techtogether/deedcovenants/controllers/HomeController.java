@@ -25,6 +25,7 @@ public class HomeController {
 
     @PostMapping()
     public String processSearchForm(Model model) {
+        model.addAttribute("placesApiKey", placesApiKey);
         return "redirect:";
     }
 }
