@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8"/>
+    <title></title>
+</head>
+<body>
+
+    <div class="form-group">
+        <form method="post">
+            <label>Please enter your admin username:
+                <input class="input" type="text" th:field="${deed.name}" th:value="${deed.name}">
+            </label>
+
+            <label>Deed Address:
+                <input class="input" type="text" th:field="${deed.address}" th:value="${deed.address}">
+            </label>
+
+            <label>Restriction:
+<!--                in order to make a drop down, do we need to create a enum?-->
+                <input class="input" type="text" th:field="${deed.restriction}" th:value="${deed.restriction}">
+            </label>
+
+            <label>Date of Deed:
+                <input class="input" type="date" th:field="${deed.dateOfDeed}" th:value="${deed.dateOfDeed}">
+            </label>
+
+            <label>Today's Date:
+                <input class="input" type="date" th:field="${deed.dateToday}" th:value="${deed.dateToday}">
+            </label>
+
+            <label>Upload Document:
+                <input class="input" type="file" th:field="${deed.file}" th:value="${deed.file}">
+            </label>
+
+            <input type="submit" value="Submit">
+
+        </form>
+    </div>
+</body>
+</html>
