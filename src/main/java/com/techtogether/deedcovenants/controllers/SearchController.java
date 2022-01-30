@@ -39,13 +39,13 @@ org.springframework.web.bind.MissingServletRequestParameterException: Required r
      */
 
     @PostMapping("/search")
-    public String processSearchForm(Model model, String addressSearchTerm) {
+    public String processSearchForm(Model model, @RequestParam String addressSearchTerm) {
         model.addAttribute("searchAddress", addressSearchTerm);
         return "response";
     }
 
     @GetMapping("/response")
-    public String displayResponse(String addressSearchTerm, Model model) {
+    public String displayResponse(@RequestParam String addressSearchTerm, Model model) {
         List<Deed> deedsThatMatchSearch = deedRepository.findByAddress(addressSearchTerm);
         Boolean hasCovenant = false;
         if (deedsThatMatchSearch.contains(addressSearchTerm)) {
