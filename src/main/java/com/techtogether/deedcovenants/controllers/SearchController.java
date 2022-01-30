@@ -27,17 +27,25 @@ public class SearchController {
         return "search";
     }
 
+    /*NOTES:
+     Search PostMapping without @RequestParam annotation will submit the form and response will render.
+     Response with @RequestParam does not render the yes/no message.
+     Navigating to /response does render the yes/no message.
+
+     Search PostMapping with @RequestParam annotation returns whitelabel error because of addressSearchTerm.
+     There was an unexpected error (type=Bad Request, status=400).
+Required request parameter 'addressSearchTerm' for method parameter type String is not present
+org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'addressSearchTerm' for method parameter type String is not present
+     */
+
     @PostMapping("/search")
     public String processSearchForm(Model model, String addressSearchTerm) {
         model.addAttribute("searchAddress", addressSearchTerm);
-//        do something with Iterable and Optional???
-//        use as reference?  https://www.codejava.net/frameworks/spring-boot/connect-to-mysql-database-examples
-//        query database directly  https://stackoverflow.com/questions/5809239/query-a-mysql-db-using-java
         return "response";
     }
 
     @GetMapping("/response")
-    public String displayResponse(@RequestParam(required = false) String addressSearchTerm, Model model) {
+    public String displayResponse(String addressSearchTerm, Model model) {
         List<Deed> deedsThatMatchSearch = deedRepository.findByAddress(addressSearchTerm);
         Boolean hasCovenant = false;
         if (deedsThatMatchSearch.contains(addressSearchTerm)) {
@@ -48,19 +56,3 @@ public class SearchController {
         return "response";
     }
 }
-
-
-/*
-if (categoryId == null) {
-            model.addAttribute("deeds", deedRepository.findAll());
-        } else {
-            Optional<EventCategory> result = eventCategoryRepository.findById(categoryId);
-            if (result.isEmpty()) {  //user asked for a category id and that id wasn't in the database
-                model.addAttribute("title", "Invalid Category ID: " + categoryId);
-            } else {
-                EventCategory category = result.get();
-                model.addAttribute("title", "Events in category: " + category.getName());
-                model.addAttribute("events", category.getEvents());
-            }
-        }
- */
