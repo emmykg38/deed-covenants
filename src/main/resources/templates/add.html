@@ -4,16 +4,22 @@
 <body>
 
     <nav th:replace="fragments :: navbar"></nav>
-<!--    <header th:replace="fragments :: header"></header>-->
+
+    <br>
+    <h3 class="row justify-content-center">Authorized users can submit new deeds here: </h3>
+    <br>
 
     <div class="container">
-        <div class="form-group">
+        <div class="row justify-content-center">
             <form method="post">
+
                 <div class="form-group">
                     <label>Please enter your admin username:
-                        <input class="form-control" type="text" th:field="${deed.name}" th:value="${deed.name}">
+                        <input class="form-control" type="text" name="user" th:value="${user}">
                     </label>
                 </div>
+                <p th:if="${authorizedUserError == true}">Only authorized users can add new deeds. Please enter your credentials.</p>
+
 
                 <div class="form-group">
                     <label>Deed Address:
@@ -23,7 +29,7 @@
 
                 <div class="form-group">
                     <label>Restriction:
-        <!--                in order to make a drop down, do we need to create a enum?-->
+
                         <input class="form-control" type="text" th:field="${deed.restriction}" th:value="${deed.restriction}">
                     </label>
                 </div>
@@ -51,6 +57,7 @@
             </form>
         </div>
     </div>
+
 
     <script async th:src="'https://maps.googleapis.com/maps/api/js?key=' + ${placesApiKey} + '&libraries=places&callback=auto'"></script>
 
