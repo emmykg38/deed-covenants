@@ -22,14 +22,13 @@
 
 
                 <div class="form-group">
-                    <label>Deed Address:
-                        <input class="form-control" type="text" id="addressInput" th:field="${deed.address}" th:value="${deed.address}">
+                    <label>Enter a Property Address:
+                        <input class="form-control" type="text" id="addressInput" th:field="${deed.address}" th:value="${deed.address}">>
                     </label>
                 </div>
 
                 <div class="form-group">
-                    <label>Restriction:
-
+                    <label>Covenant Restriction Type:
                         <input class="form-control" type="text" th:field="${deed.restriction}" th:value="${deed.restriction}">
                     </label>
                 </div>
@@ -52,7 +51,7 @@
                     </label>
                 </div>
 
-                <input type="submit" value="Submit" class="btn btn-default">
+                <input type="submit" value="Submit">
 
             </form>
         </div>
