@@ -8,5 +8,6 @@ import java.util.List;
 
 @Repository
 public interface DeedRepository extends CrudRepository<Deed, Integer> {
-    List<Deed> findByAddress(String address);
+    List<Deed> findAllByAddress(String address);
+    Deed findByAddress(String address);
 }

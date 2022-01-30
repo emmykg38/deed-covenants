@@ -2,6 +2,7 @@ package com.techtogether.deedcovenants.controllers;
 
 import com.techtogether.deedcovenants.data.DeedRepository;
 import com.techtogether.deedcovenants.models.Deed;
+import com.techtogether.deedcovenants.models.Search;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 public class SearchController {
@@ -24,6 +26,8 @@ public class SearchController {
     @GetMapping("/search")
     public String renderSearch(Model model) {
         model.addAttribute("placesApiKey", placesApiKey);
+//        model.addAttribute("search", new Search());
+//        model.addAttribute("deeds", deedRepository.findAll());
         return "search";
     }
 
@@ -38,15 +42,21 @@ Required request parameter 'addressSearchTerm' for method parameter type String 
 org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'addressSearchTerm' for method parameter type String is not present
      */
 
+
     @PostMapping("/search")
-    public String processSearchForm(Model model, @RequestParam String addressSearchTerm) {
-        List<Deed> deedsThatMatchSearch = deedRepository.findByAddress(addressSearchTerm);
+    public String processSearchForm(Model model, @RequestParam(name="searchTerm") String searchTerm) {
+
+        List<Deed> deedsThatMatchSearch = deedRepository.findAllByAddress(searchTerm);
         Boolean hasCovenant = false;
-        if (deedsThatMatchSearch.contains(addressSearchTerm)) {
+        if(!deedsThatMatchSearch.isEmpty()) {
             hasCovenant = true;
         }
+
+//        if (deedsThatMatchSearch.contains(searchTerm)) {
+//            hasCovenant = true;
+//        }
         model.addAttribute("hasCovenant", hasCovenant);
-        model.addAttribute("searchAddress", addressSearchTerm);
+        model.addAttribute("searchAddress", searchTerm);
         return "response";
     }
 
