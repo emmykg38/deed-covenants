@@ -24,22 +24,8 @@ public class SearchController {
     @GetMapping("/search")
     public String renderSearch(Model model) {
         model.addAttribute("placesApiKey", placesApiKey);
-//        model.addAttribute("search", new Search());
-//        model.addAttribute("deeds", deedRepository.findAll());
         return "search";
     }
-
-    /*NOTES:
-     Search PostMapping without @RequestParam annotation will submit the form and response will render.
-     Response with @RequestParam does not render the yes/no message.
-     Navigating to /response does render the yes/no message.
-
-     Search PostMapping with @RequestParam annotation returns whitelabel error because of addressSearchTerm.
-     There was an unexpected error (type=Bad Request, status=400).
-Required request parameter 'addressSearchTerm' for method parameter type String is not present
-org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'addressSearchTerm' for method parameter type String is not present
-     */
-
 
     @PostMapping("/search")
     public String processSearchForm(Model model, @RequestParam(name="searchTerm") String searchTerm) {
