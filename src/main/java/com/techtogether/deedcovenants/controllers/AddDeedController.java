@@ -9,7 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-
+import org.springframework.web.bind.annotation.RequestParam;
 
 
 @Controller
@@ -30,9 +30,17 @@ public class AddDeedController {
     }
 
     @PostMapping("/add")
-    public String processAddDeedForm(@ModelAttribute Deed deed, Model model) {
-        deedRepository.save(deed);
-        return "redirect:";
+    public String processAddDeedForm(@ModelAttribute Deed deed, @RequestParam(name="user") String user, Model model) {
+        boolean authorizedUserError = true;
+        if (user.equals("kwhite") || user.equals("ekgerst")) {
+            authorizedUserError = false;
+            deedRepository.save(deed);
+            return "redirect:";
+        }
+        else {
+            model.addAttribute("authorizedUserError", authorizedUserError);
+            return "add";
+        }
     }
 }
 

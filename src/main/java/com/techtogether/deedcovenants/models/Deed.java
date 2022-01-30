@@ -12,9 +12,6 @@ import java.sql.Date; //note: this used sql.Date, not java.util.Date -- I don't 
 @Entity
 public class Deed extends AbstractEntity {
 
-
-    private String name; //eventually set up a name model to allow admin to login + set up one to many relationship
-
     private String address;
 
     private String restriction;
@@ -27,8 +24,7 @@ public class Deed extends AbstractEntity {
 
     public Deed() {}
 
-    public Deed(String name, String address, String restriction, Date dateOfDeed, Date dateToday, File file) {
-        this.name = name;
+    public Deed(String address, String restriction, Date dateOfDeed, Date dateToday, File file) {
         this.address = address;
         this.restriction = restriction;
         this.dateOfDeed = dateOfDeed;
@@ -36,13 +32,6 @@ public class Deed extends AbstractEntity {
         this.file = file;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 
     public String getAddress() {
         return address;
