@@ -8,14 +8,18 @@
   <div class="container">
     <div th:switch="${hasCovenant != null}">
       <div th:if="${hasCovenant == false}">
-        <h1 class="my-4">No, the address is not listed as having a racial covenant.</h1>
+        <h1 class="my-4">The address provided is not in our database.</h1>
+        <h4>What does this mean? There still could be a racially-motivated covenant on your deed. We encourage you to find other means of determining the status of your deed. </h4>
       </div>
       <div th:if="${hasCovenant}">
         <h1 class="my-4">Yes, the address is listed as having a racial covenant.</h1>
+        <h4>Please find our legal resources below to assist you in removing these covenants:</h4>
       </div>
     </div>
   </div>
 
+  <br>
+  <br>
 
   <div class="container">
     <h1 class="my-4">Legal Resources</h1>

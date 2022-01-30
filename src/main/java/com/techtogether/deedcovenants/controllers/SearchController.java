@@ -50,9 +50,6 @@ org.springframework.web.bind.MissingServletRequestParameterException: Required r
             hasCovenant = true;
         }
 
-//        if (deedsThatMatchSearch.contains(searchTerm)) {
-//            hasCovenant = true;
-//        }
         model.addAttribute("hasCovenant", hasCovenant);
         model.addAttribute("searchAddress", searchTerm);
         return "response";
