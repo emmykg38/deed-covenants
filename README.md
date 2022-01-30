@@ -8,11 +8,16 @@ Tens of thousands of homes across the United States have covenants -- racist rel
 3. **Autocomplete**: Individuals are aided by the Google Places Autocomplete API when entering in address locations, both on the Add Deed form and the Search Address form.  
 4. **Information**: Individuals are provided historical information about racial deed covenants and present-day resources so they can continue their learning about these racist practices.
 
+## Images from Application
+<img src="C:\Users\kwhite\deed-covenants\src\main\resources\static\home-header.PNG" title="Home Page and Navigation Bar" width="200"/>
+<img src="C:\Users\kwhite\deed-covenants\src\main\resources\static\search.PNG" title="Search Form and Redlining Map of Atlanta" width="200"/>
+<img src="C:\Users\kwhite\deed-covenants\src\main\resources\static\response.PNG" title="Search Response and Resources" width="200"/>
+
+
 ## Future Development
 * Refine authorization component so that only database-registered administrators can add deeds to the database OR implement security practices which allow any user to upload a PDF of their deed.
 * The application is currently focused on Atlanta, Georgia, and we would like to expand it to a wider geographic region.
 * Bring this application to local governments so this application could have a positive impact on our communities.
-
 
 ## Authors and Acknowledgment
 |Authors   |Acknowledgment   |
