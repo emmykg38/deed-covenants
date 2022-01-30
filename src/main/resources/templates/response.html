@@ -6,6 +6,18 @@
   <header th:replace="fragments :: header"></header>
 
   <div class="container">
+    <div th:switch="${hasCovenant != null}">
+      <div th:if="${hasCovenant == false}">
+        <h1 class="my-4">No, the address is not listed as having a racial covenant.</h1>
+      </div>
+      <div th:if="${hasCovenant}">
+        <h1 class="my-4">Yes, the address is listed as having a racial covenant.</h1>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container">
     <h1 class="my-4">Legal Resources</h1>
 
     <div class="row">

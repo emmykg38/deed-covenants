@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.List;
+
 @Controller
 public class SearchController {
 
@@ -26,22 +28,39 @@ public class SearchController {
     }
 
     @PostMapping("/search")
-    public String processSearchForm(Model model, @RequestParam String searchTerm) {
-        Boolean hasCovenant;
-        Iterable<Deed> listDeeds = deedRepository.findAll();
+    public String processSearchForm(Model model, String addressSearchTerm) {
+        model.addAttribute("searchAddress", addressSearchTerm);
 //        do something with Iterable and Optional???
 //        use as reference?  https://www.codejava.net/frameworks/spring-boot/connect-to-mysql-database-examples
 //        query database directly  https://stackoverflow.com/questions/5809239/query-a-mysql-db-using-java
-        if (listDeeds.equals(searchTerm)) {
-            hasCovenant = true;
-        }
-//        model.addAttribute("listDeeds", listDeeds);
-
         return "response";
     }
 
-//    @GetMapping("/response")
-//    public String renderResponse(Model model) {
-//        return "response";
-//    }
+    @GetMapping("/response")
+    public String displayResponse(@RequestParam(required = false) String addressSearchTerm, Model model) {
+        List<Deed> deedsThatMatchSearch = deedRepository.findByAddress(addressSearchTerm);
+        Boolean hasCovenant = false;
+        if (deedsThatMatchSearch.contains(addressSearchTerm)) {
+            hasCovenant = true;
+        }
+        model.addAttribute("hasCovenant", hasCovenant);
+        model.addAttribute("searchAddress", addressSearchTerm);
+        return "response";
+    }
 }
+
+
+/*
+if (categoryId == null) {
+            model.addAttribute("deeds", deedRepository.findAll());
+        } else {
+            Optional<EventCategory> result = eventCategoryRepository.findById(categoryId);
+            if (result.isEmpty()) {  //user asked for a category id and that id wasn't in the database
+                model.addAttribute("title", "Invalid Category ID: " + categoryId);
+            } else {
+                EventCategory category = result.get();
+                model.addAttribute("title", "Events in category: " + category.getName());
+                model.addAttribute("events", category.getEvents());
+            }
+        }
+ */
