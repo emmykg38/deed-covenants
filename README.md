@@ -9,9 +9,10 @@ Tens of thousands of homes across the United States have covenants -- racist rel
 4. **Information**: Individuals are provided historical information about racial deed covenants and present-day resources so they can continue their learning about these racist practices.
 
 ## Images from Application
-<img src="C:\Users\kwhite\deed-covenants\src\main\resources\static\home-header.PNG" title="Home Page and Navigation Bar" width="200"/>
-<img src="C:\Users\kwhite\deed-covenants\src\main\resources\static\search.PNG" title="Search Form and Redlining Map of Atlanta" width="200"/>
-<img src="C:\Users\kwhite\deed-covenants\src\main\resources\static\response.PNG" title="Search Response and Resources" width="200"/>
+
+![](C:\Users\kwhite\deed-covenants\src\main\resources\static\home-header.PNG "Home Page and Navigation Bar")
+![](C:\Users\kwhite\deed-covenants\src\main\resources\static\search.PNG "Search Form and Redlining Map of Atlanta")
+![](C:\Users\kwhite\deed-covenants\src\main\resources\static\response.PNG "Search Response and Resources")
 
 
 ## Future Development
