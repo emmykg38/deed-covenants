@@ -5,12 +5,14 @@ Tens of thousands of homes across the United States have covenants -- racist rel
 ## Features
 1. **Add Covenants to Database**: Individuals can add to the Covenant Deed Database by inputting information about the property (e.g., address, date of issue, copy of deed). 
 2. **Search Database for Covenants**: Individuals may search the database for an address and learn whether the deed is known to have a racial covenant.
-3. **Autocomplete**: Individuals are aided by the Google Maps Autocomplete API when entering in address locations, both on the Add Deed form and the Search Address form.  
-4. **Information**: Individuals are provided historical information about racial covenants and present-day resources so they can continue their learning about these racist practices.
+3. **Autocomplete**: Individuals are aided by the Google Places Autocomplete API when entering in address locations, both on the Add Deed form and the Search Address form.  
+4. **Information**: Individuals are provided historical information about racial deed covenants and present-day resources so they can continue their learning about these racist practices.
 
 ## Future Development
-* Include authorization component so that only administrators can add deeds to the database.
+* Refine authorization component so that only database-registered administrators can add deeds to the database OR implement security practices which allow any user to upload a PDF of their deed.
 * The application is currently focused on Atlanta, Georgia, and we would like to expand it to a wider geographic region.
+* Bring this application to local governments so this application could have a positive impact on our communities.
+
 
 ## Authors and Acknowledgment
 |Authors   |Acknowledgment   |

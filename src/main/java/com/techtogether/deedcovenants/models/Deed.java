@@ -1,13 +1,8 @@
 package com.techtogether.deedcovenants.models;
 
-
-
-
 import javax.persistence.Entity;
 import java.io.File;
-import java.sql.Date; //note: this used sql.Date, not java.util.Date -- I don't know which would work. May need to change to java.util
-
-
+import java.sql.Date;
 
 @Entity
 public class Deed extends AbstractEntity {

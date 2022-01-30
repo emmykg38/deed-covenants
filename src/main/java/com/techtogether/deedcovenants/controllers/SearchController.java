@@ -41,8 +41,6 @@ public class SearchController {
         return "response";
     }
 
-
-//    Has GetMapping option to verify that page still renders and provides option to move out into a "info" page in the nav bar
     @GetMapping("/response")
     public String displayResponse() {
         return "response";
