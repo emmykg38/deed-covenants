@@ -9,9 +9,10 @@ Tens of thousands of homes across the United States have covenants -- racist rel
 4. **Information**: Individuals are provided historical information about racial deed covenants and present-day resources so they can continue their learning about these racist practices.
 
 ## Images from Application
-![Home Page and Navigation Bar](static/home-header.PNG)
-![Search Form and Redlining Map of Atlanta](static/search.PNG)
-![Search Response and Further Information](static/response.PNG)
+[Home Page and Navigation Bar](static/home-header.PNG)
+[Search Form and Redlining Map of Atlanta](static/search.PNG)
+[Search Response and Further Information](static/response.PNG)
+
 
 ## Future Development
 * Refine authorization component so that only database-registered administrators can add deeds to the database OR implement security practices which allow any user to upload a PDF of their deed.
