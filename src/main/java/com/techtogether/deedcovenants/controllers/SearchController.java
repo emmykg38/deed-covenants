@@ -40,12 +40,6 @@ org.springframework.web.bind.MissingServletRequestParameterException: Required r
 
     @PostMapping("/search")
     public String processSearchForm(Model model, @RequestParam String addressSearchTerm) {
-        model.addAttribute("searchAddress", addressSearchTerm);
-        return "response";
-    }
-
-    @GetMapping("/response")
-    public String displayResponse(@RequestParam String addressSearchTerm, Model model) {
         List<Deed> deedsThatMatchSearch = deedRepository.findByAddress(addressSearchTerm);
         Boolean hasCovenant = false;
         if (deedsThatMatchSearch.contains(addressSearchTerm)) {
@@ -53,6 +47,13 @@ org.springframework.web.bind.MissingServletRequestParameterException: Required r
         }
         model.addAttribute("hasCovenant", hasCovenant);
         model.addAttribute("searchAddress", addressSearchTerm);
+        return "response";
+    }
+
+
+//    Has GetMapping option to verify that page still renders and provides option to move out into a "info" page in the nav bar
+    @GetMapping("/response")
+    public String displayResponse() {
         return "response";
     }
 }
