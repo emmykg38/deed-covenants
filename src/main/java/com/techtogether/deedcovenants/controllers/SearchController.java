@@ -2,7 +2,6 @@ package com.techtogether.deedcovenants.controllers;
 
 import com.techtogether.deedcovenants.data.DeedRepository;
 import com.techtogether.deedcovenants.models.Deed;
-import com.techtogether.deedcovenants.models.Search;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -12,7 +11,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
-import java.util.Optional;
 
 @Controller
 public class SearchController {
